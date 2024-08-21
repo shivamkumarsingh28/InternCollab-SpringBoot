@@ -19,7 +19,7 @@ public class DetailDto {
 
     private String about;
 
-    private String profilePic;
+    private String profilepic;
 
     private String document;
 

@@ -20,6 +20,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -43,6 +44,8 @@ public class Auth implements UserDetails{
     @Column(name = "user_name", nullable = false, length = 100)
     private String userName;
 
+    @NotEmpty
+    @Column(unique = true)
     private String email;
 
     private String password;

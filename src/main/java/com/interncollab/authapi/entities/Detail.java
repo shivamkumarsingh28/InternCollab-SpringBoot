@@ -32,7 +32,7 @@ public class Detail {
     @Column(length = 1000000000)
     private String about;
 
-    private String profilePic;
+    private String profilepic;
 
     private String document;
 

@@ -36,8 +36,6 @@ public class DetailServiceImpl implements DetailService{
         detail.setFullName(detailDto.getFullName());
         detail.setContact(detailDto.getContact());
         detail.setAbout(detailDto.getAbout());
-        detail.setProfilePic("profile.jpg");
-        detail.setDocument("document.pdf");
         detail.setAddedDate(new Date());
         detail.setAuth(auth);
 
@@ -53,10 +51,8 @@ public class DetailServiceImpl implements DetailService{
         detail.setFullName(detailDto.getFullName());
         detail.setContact(detailDto.getContact());
         detail.setAbout(detailDto.getAbout());
-        detail.setProfilePic("updateprofile.jpg");
-        detail.setDocument("updatedocument.pdf");
-        
-
+        detail.setProfilepic(detailDto.getProfilepic());
+        detail.setDocument(detailDto.getDocument());
         Detail updateDetail = this.detailRepo.save(detail);
         return this.modelMapper.map(updateDetail, DetailDto.class);
     }

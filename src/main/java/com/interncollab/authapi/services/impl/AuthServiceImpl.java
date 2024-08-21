@@ -5,12 +5,16 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.interncollab.authapi.config.AppConstants;
 import com.interncollab.authapi.entities.Auth;
+import com.interncollab.authapi.entities.Role;
 import com.interncollab.authapi.exceptions.ResourceNotFoundException;
 import com.interncollab.authapi.payloads.AuthDto;
 import com.interncollab.authapi.repository.AuthRepo;
+import com.interncollab.authapi.repository.RoleRepo;
 import com.interncollab.authapi.services.AuthService;
 
 @Service
@@ -21,6 +25,12 @@ public class AuthServiceImpl implements AuthService {
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private RoleRepo roleRepo;
 
     @Override
     public AuthDto createAuth(AuthDto authDto) {
@@ -81,6 +91,21 @@ public class AuthServiceImpl implements AuthService {
         // auth.setEmail(authDto.getEmail());
         // auth.setPassword(authDto.getPassword());
         return auth;
+    }
+
+    @Override
+    public AuthDto registerNewAuth(AuthDto authDto) {
+        Auth auth = this.modelMapper.map(authDto, Auth.class);
+        // password encode 
+        auth.setPassword(this.passwordEncoder.encode(auth.getPassword()));
+
+        // role
+        Role role = this.roleRepo.findById(AppConstants.STUDENT_USER).get();
+
+        auth.getRole().add(role);
+
+        Auth newAuth = this.authRepo.save(auth);
+        return this.modelMapper.map(newAuth, AuthDto.class);
     }
 
 }

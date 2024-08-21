@@ -22,11 +22,8 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
-
-
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/user/")
 public class AuthController {
 
     @Autowired
@@ -34,7 +31,7 @@ public class AuthController {
 
     // Post- create auth
     @PostMapping("/")
-    public ResponseEntity<AuthDto> createAuth(@javax.validation.Valid @RequestBody AuthDto authDto) {
+    public ResponseEntity<AuthDto> createAuth(@Valid @RequestBody AuthDto authDto) {
         AuthDto createAuthDto = this.authService.createAuth(authDto);
         return new ResponseEntity<>(createAuthDto, HttpStatus.CREATED);
     }
@@ -62,6 +59,7 @@ public class AuthController {
     }
 
     // Get - all auth
+    @PreAuthorize("hasRole('COMPANY')")
     @GetMapping("/")
     public ResponseEntity<List<AuthDto>> getAllAuth() {
         return ResponseEntity.ok(this.authService.getAllAuths());

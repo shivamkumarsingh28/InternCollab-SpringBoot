@@ -5,6 +5,8 @@ import java.util.List;
 import com.interncollab.authapi.payloads.AuthDto;
 
 public interface AuthService {
+
+    AuthDto registerNewAuth(AuthDto auth);
     
     AuthDto createAuth(AuthDto auth);
 

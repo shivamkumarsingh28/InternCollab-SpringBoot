@@ -1,5 +1,6 @@
 package com.interncollab.authapi.payloads;
 
+import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -20,9 +21,12 @@ public class AuthDto {
     private String userName;
 
     @Email(message = "Email address is not valid")
+    @Column(unique = true)
     private String email;
 
     @NotNull
     @Size(min = 3, max = 10, message = "Password must be min of 3 chars and max of 4 chars !!")
     private String password;
+
+
 }

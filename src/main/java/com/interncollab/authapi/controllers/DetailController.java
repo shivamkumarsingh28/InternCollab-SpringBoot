@@ -77,8 +77,8 @@ public class DetailController {
     @PostMapping("/detail/document/upload/{detailId}")
     public ResponseEntity<DetailDto> uploadDocument(
         @RequestParam("profile_pic") MultipartFile profile_pic, 
-    @RequestParam("profile_document") MultipartFile profile_document,
-    @PathVariable Integer detailId) throws IOException {
+        @RequestParam("profile_document") MultipartFile profile_document,
+        @PathVariable Integer detailId) throws IOException {
         //TODO: process POST request
 
         DetailDto detailDto = this.detailService.getDetailById(detailId);

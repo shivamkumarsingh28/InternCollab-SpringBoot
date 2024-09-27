@@ -8,7 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.password.PasswordEncoder;
+// import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.interncollab.authapi.config.AppConstants;
 import com.interncollab.authapi.entities.Role;
@@ -17,9 +17,6 @@ import com.interncollab.authapi.repository.RoleRepo;
 
 @SpringBootApplication
 public class AuthapiApplication implements CommandLineRunner{
-
-	@Autowired
-	private PasswordEncoder passwordEncoder;
 
 	@Autowired
 	private RoleRepo roleRepo;

@@ -2,6 +2,7 @@ package com.interncollab.authapi.controllers;
 
 import javax.validation.Valid;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.interncollab.authapi.entities.Auth;
 import com.interncollab.authapi.payloads.AuthDto;
 import com.interncollab.authapi.payloads.JwtAuthRequest;
 import com.interncollab.authapi.payloads.JwtAuthResponse;
@@ -39,6 +41,9 @@ public class LoginController {
     @Autowired
     private AuthService authService;
 
+    @Autowired
+	private ModelMapper mapper;
+
     @PostMapping("/login")
     public ResponseEntity<JwtAuthResponse> createToken(@RequestBody JwtAuthRequest request) throws Exception {
         
@@ -50,6 +55,7 @@ public class LoginController {
 
         JwtAuthResponse response = new JwtAuthResponse();
         response.setToken(token);
+		response.setAuth(this.mapper.map((Auth) userDetails, AuthDto.class));
         return new ResponseEntity<JwtAuthResponse>(response, HttpStatus.OK);
     }
 

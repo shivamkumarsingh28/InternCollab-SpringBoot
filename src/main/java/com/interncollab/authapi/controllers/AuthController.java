@@ -59,7 +59,7 @@ public class AuthController {
     }
 
     // Get - all auth
-    @PreAuthorize("hasRole('COMPANY')")
+    // @PreAuthorize("hasRole('COMPANY')")
     @GetMapping("/")
     public ResponseEntity<List<AuthDto>> getAllAuth() {
         return ResponseEntity.ok(this.authService.getAllAuths());

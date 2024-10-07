@@ -1,3 +1,16 @@
+
+
+![Screenshot 2024-10-07 160609](https://github.com/user-attachments/assets/f73f493f-a103-4728-9c14-96227bf1db71)
+![Screenshot 2024-10-07 160015](https://github.com/user-attachments/assets/3914753d-46f0-4f48-8dd5-be680d053aff)
+![Screenshot 2024-10-07 160633](https://github.com/user-attachments/assets/0162457e-9e0c-4a60-bdad-27d2d86f8128)
+![Screenshot 2024-10-07 160432](https://github.com/user-attachments/assets/e6013051-5b22-456e-94f5-707401f424b0)
+![Screenshot 2024-10-07 160417](https://github.com/user-attachments/assets/d59046be-74b8-4db5-9d3e-6ce3c0151db6)
+![Screenshot 2024-10-07 160256](https://github.com/user-attachments/assets/a429d5c4-4bcb-424a-a362-5cfed6591557)
+![Screenshot 2024-10-07 160134](https://github.com/user-attachments/assets/f2a8b71d-9de4-454d-aa3b-2c69db672265)
+![Screenshot 2024-10-07 160118](https://github.com/user-attachments/assets/68fc0f2f-9250-4f69-8d4c-7cebe99f19e1)
+![Screenshot 2024-10-07 160105](https://github.com/user-attachments/assets/6dfeb402-6ac7-444d-b7e5-7f372c16bc3c)
+![Screenshot 2024-10-07 160031](https://github.com/user-attachments/assets/7d7c0542-edb4-4525-aed8-6759e6d5780a)
+
 🔥REST Architecture \| REST Constraints in Detail \|
 [[Done]{.underline}](https://docs.google.com/document/d/1GUpACDPuJa05hGLucRNvpucszKdo-UDoJIuRJUvfrX4/edit#heading=h.agjxfieywo0a)
 
